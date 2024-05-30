@@ -1,7 +1,9 @@
-﻿namespace BuberDinner.Application.Autentication;
+﻿using ErrorOr;
+
+namespace BuberDinner.Application.Autentication;
 
 public interface IAuthenticationService
 {
-    AutenticationResult Register(string firstName, string lastName, string email, string password);
-    AutenticationResult Login(string email, string password);
+    ErrorOr<AutenticationResult> Register(string firstName, string lastName, string email, string password);
+    ErrorOr<AutenticationResult> Login(string email, string password);
 }

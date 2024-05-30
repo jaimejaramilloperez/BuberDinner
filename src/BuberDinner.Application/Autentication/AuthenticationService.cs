@@ -17,7 +17,7 @@ public class AuthenticationService : IAuthenticationService
         _userRepository = userRepository;
     }
 
-    public ErrorOr<AutenticationResult> Register(string firstName, string lastName, string email, string password)
+    public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
     {
         if (_userRepository.GetUserByEmail(email) is not null)
         {
@@ -36,10 +36,10 @@ public class AuthenticationService : IAuthenticationService
 
         var token = _jwtTokenGenerator.GenerateToken(user);
 
-        return new AutenticationResult(user, token);
+        return new AuthenticationResult(user, token);
     }
 
-    public ErrorOr<AutenticationResult> Login(string email, string password)
+    public ErrorOr<AuthenticationResult> Login(string email, string password)
     {
         if (_userRepository.GetUserByEmail(email) is not User user)
         {
@@ -53,6 +53,6 @@ public class AuthenticationService : IAuthenticationService
 
         var token = _jwtTokenGenerator.GenerateToken(user);
 
-        return new AutenticationResult(user, token);
+        return new AuthenticationResult(user, token);
     }
 }

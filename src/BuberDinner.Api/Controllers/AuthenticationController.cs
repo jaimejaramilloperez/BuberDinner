@@ -18,7 +18,7 @@ public class AuthenticationController : ApiController
     [HttpPost("register")]
     public IActionResult Register(RegisterRequest request)
     {
-        ErrorOr<AutenticationResult> authResult = _authorizationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
+        ErrorOr<AuthenticationResult> authResult = _authorizationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
 
         return authResult.Match(
             authResult => Ok(MapAuthResult(authResult)),
@@ -28,14 +28,14 @@ public class AuthenticationController : ApiController
     [HttpPost("login")]
     public IActionResult Login(LoginRequest request)
     {
-        ErrorOr<AutenticationResult> authResult = _authorizationService.Login(request.Email, request.Password);
+        ErrorOr<AuthenticationResult> authResult = _authorizationService.Login(request.Email, request.Password);
 
         return authResult.Match(
             authResult => Ok(MapAuthResult(authResult)),
             errors => Problem(errors));
     }
 
-    private static AuthenticationResponse MapAuthResult(AutenticationResult authResult)
+    private static AuthenticationResponse MapAuthResult(AuthenticationResult authResult)
     {
         return new AuthenticationResponse(
                 authResult.User.Id,

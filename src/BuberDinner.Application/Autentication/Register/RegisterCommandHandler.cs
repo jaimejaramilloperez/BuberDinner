@@ -4,39 +4,40 @@ using BuberDinner.Application.Common.Interfaces.Persistence;
 using BuberDinner.Domain.Common.Errors;
 using BuberDinner.Domain.Entities;
 using ErrorOr;
+using MediatR;
 
-namespace BuberDinner.Application.Autentication.Commands;
+namespace BuberDinner.Application.Autentication.Register;
 
-public class AuthenticationCommandService : IAuthenticationCommandService
+public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserRepository _userRepository;
 
-    public AuthenticationCommandService(IJwtTokenGenerator jwtGenerator, IUserRepository userRepository)
+    public RegisterCommandHandler(IJwtTokenGenerator jwtGenerator, IUserRepository userRepository)
     {
         _jwtTokenGenerator = jwtGenerator;
         _userRepository = userRepository;
     }
 
-    public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
+    public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
-        if (_userRepository.GetUserByEmail(email) is not null)
+        if (_userRepository.GetUserByEmail(request.Email) is not null)
         {
             return Errors.User.DuplicatedEmail;
         }
 
         var user = new User
         {
-            FirstName = firstName,
-            LastName = lastName,
-            Email = email,
-            Password = password
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            Email = request.Email,
+            Password = request.Password
         };
 
         _userRepository.Add(user);
 
         var token = _jwtTokenGenerator.GenerateToken(user);
 
-        return new AuthenticationResult(user, token);
+        return await Task.FromResult(new AuthenticationResult(user, token));
     }
 }

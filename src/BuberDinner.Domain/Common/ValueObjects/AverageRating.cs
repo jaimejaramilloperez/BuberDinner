@@ -31,5 +31,6 @@ public sealed class AverageRating : ValueObject
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
+        yield return NumRatings;
     }
 }

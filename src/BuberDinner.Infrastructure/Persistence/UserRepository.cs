@@ -3,7 +3,7 @@ using BuberDinner.Domain.Entities;
 
 namespace BuberDinner.Infrastructure.Persistence;
 
-internal class UserRepository : IUserRepository
+public class UserRepository : IUserRepository
 {
     private static readonly List<User> Users = [];
 

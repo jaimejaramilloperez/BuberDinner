@@ -26,13 +26,11 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
             return Errors.User.DuplicatedEmail;
         }
 
-        var user = new User
-        {
-            FirstName = request.FirstName,
-            LastName = request.LastName,
-            Email = request.Email,
-            Password = request.Password
-        };
+        var user = User.Create(
+            request.FirstName,
+            request.LastName,
+            request.Email,
+            request.Password);
 
         _userRepository.Add(user);
 

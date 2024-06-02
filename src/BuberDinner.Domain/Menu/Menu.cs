@@ -37,6 +37,8 @@ public sealed class Menu : AggregateRoot<MenuId>
         Name = name;
         Description = description;
         AverageRating = averageRating;
+        CreatedDateTime = DateTime.UtcNow;
+        UpdatedDateTime = DateTime.UtcNow;
         _sections = sections;
     }
 

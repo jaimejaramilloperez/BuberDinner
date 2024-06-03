@@ -5,23 +5,41 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3115AC5-7F67-49AA-890A-394B67EC4956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Api", "src\BuberDinner.Api\BuberDinner.Api.csproj", "{8F879620-2D65-4B1B-AA9D-489D4BA20BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Api", "src\BuberDinner.Api\BuberDinner.Api.csproj", "{8F879620-2D65-4B1B-AA9D-489D4BA20BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Application", "src\BuberDinner.Application\BuberDinner.Application.csproj", "{9CB9551C-94FA-497D-B686-9D6076D5F1CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Application", "src\BuberDinner.Application\BuberDinner.Application.csproj", "{9CB9551C-94FA-497D-B686-9D6076D5F1CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Contracts", "src\BuberDinner.Contracts\BuberDinner.Contracts.csproj", "{61DD8FCC-1F83-458C-A167-D7B56F542226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Contracts", "src\BuberDinner.Contracts\BuberDinner.Contracts.csproj", "{61DD8FCC-1F83-458C-A167-D7B56F542226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Domain", "src\BuberDinner.Domain\BuberDinner.Domain.csproj", "{01AE06D3-A89C-4AD9-AFBD-7E982EF91CF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Domain", "src\BuberDinner.Domain\BuberDinner.Domain.csproj", "{01AE06D3-A89C-4AD9-AFBD-7E982EF91CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Infrastructure", "src\BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj", "{F8525E7F-A286-4CC4-8977-53015C6DF61E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Infrastructure", "src\BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj", "{F8525E7F-A286-4CC4-8977-53015C6DF61E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A3AB00C-248D-45DC-AFEB-9C205270A637}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requests", "Requests", "{930885FF-C676-4470-9CE1-1FB2ED4F69D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{520A29E1-43C6-47CE-AD66-DDA50F4EC84E}"
+	ProjectSection(SolutionItems) = preProject
+		requests\Autentication\Login.http = requests\Autentication\Login.http
+		requests\Autentication\Register.http = requests\Autentication\Register.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dinners", "Dinners", "{D060359F-B61B-4CA0-9D35-86B55C2F431B}"
+	ProjectSection(SolutionItems) = preProject
+		requests\Dinners\ListDinners.http = requests\Dinners\ListDinners.http
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8F879620-2D65-4B1B-AA9D-489D4BA20BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -45,11 +63,20 @@ Global
 		{F8525E7F-A286-4CC4-8977-53015C6DF61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8525E7F-A286-4CC4-8977-53015C6DF61E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8F879620-2D65-4B1B-AA9D-489D4BA20BE7} = {D3115AC5-7F67-49AA-890A-394B67EC4956}
 		{9CB9551C-94FA-497D-B686-9D6076D5F1CC} = {D3115AC5-7F67-49AA-890A-394B67EC4956}
 		{61DD8FCC-1F83-458C-A167-D7B56F542226} = {D3115AC5-7F67-49AA-890A-394B67EC4956}
 		{01AE06D3-A89C-4AD9-AFBD-7E982EF91CF6} = {D3115AC5-7F67-49AA-890A-394B67EC4956}
 		{F8525E7F-A286-4CC4-8977-53015C6DF61E} = {D3115AC5-7F67-49AA-890A-394B67EC4956}
+		{930885FF-C676-4470-9CE1-1FB2ED4F69D4} = {8A3AB00C-248D-45DC-AFEB-9C205270A637}
+		{520A29E1-43C6-47CE-AD66-DDA50F4EC84E} = {930885FF-C676-4470-9CE1-1FB2ED4F69D4}
+		{D060359F-B61B-4CA0-9D35-86B55C2F431B} = {930885FF-C676-4470-9CE1-1FB2ED4F69D4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D4D4526-3248-4209-BE17-7B03C48B3320}
 	EndGlobalSection
 EndGlobal

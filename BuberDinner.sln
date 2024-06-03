@@ -36,6 +36,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dinners", "Dinners", "{D060
 		requests\Dinners\ListDinners.http = requests\Dinners\ListDinners.http
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Menus", "Menus", "{49C2C4D1-B21E-4A24-B13B-E2F87074A19C}"
+	ProjectSection(SolutionItems) = preProject
+		requests\Menus\CreateMenuRequest.http = requests\Menus\CreateMenuRequest.http
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +80,7 @@ Global
 		{930885FF-C676-4470-9CE1-1FB2ED4F69D4} = {8A3AB00C-248D-45DC-AFEB-9C205270A637}
 		{520A29E1-43C6-47CE-AD66-DDA50F4EC84E} = {930885FF-C676-4470-9CE1-1FB2ED4F69D4}
 		{D060359F-B61B-4CA0-9D35-86B55C2F431B} = {930885FF-C676-4470-9CE1-1FB2ED4F69D4}
+		{49C2C4D1-B21E-4A24-B13B-E2F87074A19C} = {930885FF-C676-4470-9CE1-1FB2ED4F69D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D4D4526-3248-4209-BE17-7B03C48B3320}

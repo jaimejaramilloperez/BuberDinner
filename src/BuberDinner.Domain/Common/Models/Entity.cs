@@ -14,6 +14,7 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
     {
         return obj is Entity<TId> entity && Id.Equals(entity.Id);
     }
+
     public virtual bool Equals(Entity<TId>? other)
     {
         return Equals((object?)other);
@@ -33,5 +34,4 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
     {
         return Id.GetHashCode();
     }
-
 }

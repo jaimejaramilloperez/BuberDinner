@@ -27,7 +27,7 @@ public class ApiController : ControllerBase
         return Problem(errors[0]);
     }
 
-    private IActionResult Problem(Error error)
+    private ObjectResult Problem(Error error)
     {
         var statusCode = error.Type switch
         {
@@ -42,7 +42,7 @@ public class ApiController : ControllerBase
         return Problem(statusCode: statusCode, title: error.Description);
     }
 
-    private IActionResult ValidationProblem(List<Error> errors)
+    private ActionResult ValidationProblem(List<Error> errors)
     {
         var modelStateDictionary = new ModelStateDictionary();
 

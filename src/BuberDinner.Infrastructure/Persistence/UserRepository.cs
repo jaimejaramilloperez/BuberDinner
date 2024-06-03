@@ -11,6 +11,7 @@ public class UserRepository : IUserRepository
     {
         return Users.Find(x => x.Email == email);
     }
+
     public void Add(User user)
     {
         Users.Add(user);

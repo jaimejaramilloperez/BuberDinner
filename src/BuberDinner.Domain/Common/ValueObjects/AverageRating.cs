@@ -20,12 +20,12 @@ public sealed class AverageRating : ValueObject
 
     public void AddNewRating(Rating rating)
     {
-        Value = (Value * NumRatings + rating.Value) / ++NumRatings;
+        Value = ((Value * NumRatings) + rating.Value) / ++NumRatings;
     }
 
     public void RemoveRating(Rating rating)
     {
-        Value = (Value * NumRatings - rating.Value) / --NumRatings;
+        Value = ((Value * NumRatings) - rating.Value) / --NumRatings;
     }
 
     public override IEnumerable<object> GetEqualityComponents()

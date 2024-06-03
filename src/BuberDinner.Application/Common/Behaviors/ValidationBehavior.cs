@@ -26,7 +26,7 @@ public class ValidationBehavior<TRequest, TResponse>
             return await next();
         }
 
-        var validationResult = _validaror.Validate(request);
+        var validationResult = await _validaror.ValidateAsync(request, cancellationToken);
 
         if (validationResult.IsValid)
         {

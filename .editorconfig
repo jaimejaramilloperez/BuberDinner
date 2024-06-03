@@ -61,7 +61,7 @@ dotnet_style_prefer_conditional_expression_over_assignment = true:warning
 dotnet_style_prefer_conditional_expression_over_return = true:silent
 dotnet_style_prefer_inferred_anonymous_type_member_names = true:error
 dotnet_style_prefer_inferred_tuple_names = true:error
-dotnet_style_prefer_is_null_check_over_reference_equality_method = true:error
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
 dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
 dotnet_style_prefer_simplified_interpolation = true:suggestion
 
@@ -172,6 +172,7 @@ csharp_preserve_single_line_blocks = true
 csharp_preserve_single_line_statements = false
 
 #### Naming styles ####
+
 [*.{cs,vb}]
 
 # Naming rules
@@ -362,16 +363,106 @@ dotnet_naming_style.s_camelcase.required_suffix =
 dotnet_naming_style.s_camelcase.word_separator = 
 dotnet_naming_style.s_camelcase.capitalization = camel_case
 
-# Diagnostic
+#### Static Analyzers ####
 
-dotnet_diagnostic.S6605.severity = suggestion
+# NET.CodeAnalyzers
 
+# CA1002: Do not expose generic lists
+dotnet_diagnostic.CA1002.severity = suggestion
+
+# CA1019: Define accessors for attribute arguments
 dotnet_diagnostic.CA1019.severity = suggestion
+
+# CA1024: Use properties where appropriate
 dotnet_diagnostic.CA1024.severity = warning
+
+# CA1031: Do not catch general exception types
 dotnet_diagnostic.CA1031.severity = suggestion
+
+# CA1034: Nested types should not be visible
+dotnet_diagnostic.CA1034.severity = none
+
+# CA1062: Validate arguments of public methods
 dotnet_diagnostic.CA1062.severity = suggestion
+
+# CA1700: Do not name enum values 'Reserved'
+dotnet_diagnostic.CA1700.severity = none
+
+# CA1724: Type names should not match namespaces
+dotnet_diagnostic.CA1724.severity = none
+
+# CA1848: Use the LoggerMessage delegates
 dotnet_diagnostic.CA1848.severity = suggestion
-dotnet_diagnostic.CA1849.severity = suggestion
+
+# CA1849: Call async methods when in an async method
+dotnet_diagnostic.CA1849.severity = warning
+
+# CA1860: Avoid using 'Enumerable.Any()' extension method
 dotnet_diagnostic.CA1860.severity = suggestion
+
+# CA2007: Do not directly await a Task
 dotnet_diagnostic.CA2007.severity = none
+
+# CA2016: Forward the 'CancellationToken' parameter to methods
+dotnet_diagnostic.CA2016.severity = warning
+
+# CA5394: Do not use insecure randomness
 dotnet_diagnostic.CA5394.severity = warning
+
+# Visual Studio Analyzers
+
+
+# StyleCop.Analyzers
+
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1000: Keywords should be spaced correctly
+dotnet_diagnostic.SA1000.severity = suggestion
+
+# SA1009: Closing parenthesis should be spaced correctly
+dotnet_diagnostic.SA1009.severity = none
+
+# SA1010: Opening square brackets should be spaced correctly
+dotnet_diagnostic.SA1010.severity = none
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1200: Using directives should be placed correctly
+dotnet_diagnostic.SA1200.severity = none
+
+# SA1201: Elements should appear in the correct order
+dotnet_diagnostic.SA1201.severity = none
+
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.SA1309.severity = none
+
+# SA1313: Parameter names should begin with lower-case letter
+dotnet_diagnostic.SA1313.severity = none
+
+# SA1516: Elements should be separated by blank line
+dotnet_diagnostic.SA1516.severity = none
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = suggestion
+
+# SA1601: Partial elements should be documented
+dotnet_diagnostic.SA1601.severity = suggestion
+
+# SA1602: Enumeration items should be documented
+dotnet_diagnostic.SA1602.severity = suggestion
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1642: Constructor summary documentation should begin with standard text
+dotnet_diagnostic.SA1642.severity = suggestion
+
+# SonarAnalyzers.CSharp
+
+# S6602: "Find" method should be used instead of the "FirstOrDefault" extension
+dotnet_diagnostic.S6602.severity = suggestion
+
+# S6966: Awaitable method should be used
+dotnet_diagnostic.S6966.severity = suggestion

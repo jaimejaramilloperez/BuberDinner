@@ -14,7 +14,7 @@ public sealed class Dinner : AggregateRoot<DinnerId>
 
     public string Name { get; private set; }
     public string Description { get; private set; }
-    public string ImageUrl { get; private set; }
+    public Uri ImageUrl { get; private set; }
     public DateTime StartDateTime { get; private set; }
     public DateTime EndDateTime { get; private set; }
     public DateTime? StartedDateTime { get; private set; }
@@ -36,7 +36,7 @@ public sealed class Dinner : AggregateRoot<DinnerId>
         MenuId menuId,
         string name,
         string description,
-        string imageUrl,
+        Uri imageUrl,
         bool isPublic,
         int maxGuests,
         Price price,
@@ -72,7 +72,7 @@ public sealed class Dinner : AggregateRoot<DinnerId>
         MenuId menuId,
         string name,
         string description,
-        string imageUrl,
+        Uri imageUrl,
         bool isPublic,
         int maxGuests,
         Price price,

@@ -1,6 +1,7 @@
 ﻿using BuberDinner.Application.Autentication.Login;
 using BuberDinner.Application.Autentication.Register;
 using BuberDinner.Application.Common.Behaviors;
+using BuberDinner.Application.Menus.CreateMenu;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,7 @@ public static class DependencyInjectionRegister
 
         services.AddScoped<IValidator<RegisterCommand>, RegisterCommandValidator>();
         services.AddScoped<IValidator<LoginQuery>, LoginQueryValidator>();
+        services.AddScoped<IValidator<CreateMenuCommand>, CreateMenuCommandValidator>();
 
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 

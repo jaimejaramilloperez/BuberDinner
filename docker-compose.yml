@@ -1,0 +1,19 @@
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: database
+    restart: always
+    user: root
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Admin123!
+    ports:
+      - 1433:1433
+    volumes:
+        - BuberDinner:/var/opt/mssql/data
+        - BuberDinner:/var/opt/mssql/log
+        - BuberDinner:/var/opt/mssql/secrets
+
+volumes:
+  BuberDinner:
+    external: false

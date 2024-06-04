@@ -481,3 +481,8 @@ dotnet_diagnostic.S6602.severity = suggestion
 
 # S6966: Awaitable method should be used
 dotnet_diagnostic.S6966.severity = suggestion
+
+# Migration files
+
+[**/Migrations/**]
+generated_code = true

@@ -1,9 +1,13 @@
 ﻿namespace BuberDinner.Domain.Common.Models;
 
-public abstract class Entity<TId> : IEquatable<Entity<TId>>
+public abstract class Entity<TId> : IEquatable<Entity<TId>>, IHasDomainEvents
     where TId : notnull
 {
+    private readonly List<IDomainEvent> _domainEvents = [];
+
     public TId Id { get; protected set; }
+
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     protected Entity()
@@ -14,6 +18,16 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
     protected Entity(TId id)
     {
         Id = id;
+    }
+
+    public void AddDomainEvent(IDomainEvent domainEvent)
+    {
+        _domainEvents.Add(domainEvent);
+    }
+
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
     }
 
     public override bool Equals(object? obj)

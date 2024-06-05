@@ -382,6 +382,9 @@ dotnet_diagnostic.CA1031.severity = suggestion
 # CA1034: Nested types should not be visible
 dotnet_diagnostic.CA1034.severity = none
 
+# CA1040: Avoid empty interfaces
+dotnet_diagnostic.CA1040.severity = suggestion
+
 # CA1062: Validate arguments of public methods
 dotnet_diagnostic.CA1062.severity = suggestion
 

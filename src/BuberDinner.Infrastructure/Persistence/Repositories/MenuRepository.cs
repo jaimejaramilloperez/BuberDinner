@@ -12,9 +12,9 @@ public class MenuRepository : IMenuRepository
         _dbContext = dbContext;
     }
 
-    public void Add(Menu menu)
+    public async Task AddAsync(Menu menu)
     {
         _dbContext.Add(menu);
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
     }
 }

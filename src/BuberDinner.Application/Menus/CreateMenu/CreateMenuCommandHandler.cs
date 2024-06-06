@@ -29,8 +29,8 @@ public class CreateMenuCommandHandler : IRequestHandler<CreateMenuCommand, Error
                     name: item.Name,
                     description: item.Description)))));
 
-        _menuRepository.Add(menu);
+        await _menuRepository.AddAsync(menu);
 
-        return await Task.FromResult(menu);
+        return menu;
     }
 }

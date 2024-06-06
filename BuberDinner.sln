@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Packages.props = Directory.Packages.props
 		docker-compose.yml = docker-compose.yml
 		.config\dotnet-tools.json = .config\dotnet-tools.json
+		globals.json = globals.json
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -48,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AFCC8C22
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{06C9F2EC-A4FF-4506-8926-17150B8F84E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Application.UnitTests", "tests\UnitTests\BuberDinner.Application.UnitTests\BuberDinner.Application.UnitTests.csproj", "{791746AD-55D5-4500-BB72-FEA383353053}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuberDinner.Application.UnitTests", "tests\UnitTests\BuberDinner.Application.UnitTests\BuberDinner.Application.UnitTests.csproj", "{791746AD-55D5-4500-BB72-FEA383353053}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

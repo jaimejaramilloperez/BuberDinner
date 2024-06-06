@@ -489,3 +489,9 @@ dotnet_diagnostic.S6966.severity = suggestion
 
 [**/Migrations/**]
 generated_code = true
+
+# Test files
+
+[**/UnitTests/**]
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity = none
